@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     font-family: 'Lato', sans-serif;
+    background-color: #000000;
     // Deixa branco no começo
     color: ${({ theme }) => theme.colors.contrastText};
   }

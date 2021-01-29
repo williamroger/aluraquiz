@@ -1,10 +1,10 @@
 {
-  "bg": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+  "bg": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
   "title": "Cinema Quiz",
   "description": "Teste os seus conhecimentos sobre Cinema e prove que é um verdadeiro amante da 7ª Arte",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
       "title": "Qual desses atores venceram mais oscars?",
       "description": "Dica: não é o Antônio Fagundes!",
       "answer": 1,
