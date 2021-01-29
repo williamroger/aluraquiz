@@ -22,10 +22,10 @@ export default function Home() {
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Cinema Quiz</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <p>Teste todos os seus conhecimentos sobre Cinema.</p>
+            <p>{db.description}</p>
 
             <form 
               onSubmit={(event) => {

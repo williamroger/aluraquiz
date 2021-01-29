@@ -22,13 +22,14 @@ function LoadWidget() {
 }
 
 export default function QuizPage() {
+  console.log('questions ', db.questions);
   return (
     <QuizBackground backgroundImage={db.bg}>
       <QuizContainer>
         <QuizLogo />
         <Widget>
           <Widget.Header>
-            <h1>Pergunta 1 de 20</h1>
+            <h1>Pergunta 1 de {db.questions.length}</h1>
           </Widget.Header>
           <img 
             style={{

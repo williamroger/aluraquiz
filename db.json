@@ -1,28 +1,266 @@
 {
-  "bg": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+  "title": "Cinema Quiz",
+  "description": "Teste os seus conhecimentos sobre Cinema e prove que é um verdadeiro amante da 7ª Arte",
   "questions": [
     {
       "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
-      "description": "Essa é pra aquecer",
-      "answer": 2,
+      "title": "Qual desses atores venceram mais oscars?",
+      "description": "Dica: não é o Antônio Fagundes!",
+      "answer": 1,
       "alternatives": [
-        ".elemento",
-        "*elemento",
-        "#elemento",
-        "%elemento"
+        "Robert De Niro",
+        "Jack Nicholson",
+        "Jamie Foxx",
+        "Al Pacino",
+        "Jade Leto"
       ]
     },
     {
       "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
-      "description": "Faz tempo em haha",
+      "title": "Qual destas obras do cinema não é de autoria do diretor David Fincher?",
+      "description": "Dica: é um dos filmes abaixo!",
+      "answer": 3,
+      "alternatives": [
+        "Clube da Luta - 1999",
+        "O Quarto do Pânico - 2002",
+        "Garota Exemplar - 2014",
+        "Cisne Negro - 2010",
+        "Alien 3 - 1992"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual dessas grandes atrizes abaixo protagonizou o clássico O silêncio dos Inocentes de 1991?",
+      "description": "Dica: não é a Vera Fischer!",
       "answer": 0,
       "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
+        "Jodie Foster",
+        "Julianne Moore",
+        "Frances McDormand",
+        "Nicole Kidman",
+        "Emma Thompson"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Taxi Drive, Bons Companheiros e Gangues de New York são filmes de qual diretor abaixo?",
+      "description": "Dica: não é o Wolf Maya!",
+      "answer": 2,
+      "alternatives": [
+        "Steven Spielberg",
+        "Christopher Nollan",
+        "Martin Scorsese",
+        "Quentin Tarantino",
+        "Stanley Kubrick"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual desses filmes a Jennifer Lawrence venceu o oscar de melhor atriz?",
+      "description": "Dica: não é Cidade de Deus!",
+      "answer": 0,
+      "alternatives": [
+        "O Lado Bom da Vida",
+        "Mãe",
+        "Inverno da Alma",
+        "Trapaça",
+        "Joy- O Nome do Sucesso"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual desses filmes de guerra é dirigido por uma mulher?",
+      "description": "Dica: não é esse que você está pensando!",
+      "answer": 1,
+      "alternatives": [
+        "Até o Ultimo Homem",
+        "Guerra ao Terror",
+        "O Resgate do Soldado Ryan",
+        "Sniper Americano",
+        "Corações de Ferro"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual desses filmes não é de autoria do diretor Stanley Kubrick?",
+      "description": "Dica: essa é tão fácil que nem precisa de dica!",
+      "answer": 4,
+      "alternatives": [
+        "Laranja Mecânica",
+        "2001: Uma Odisseia no Espaço",
+        "O Iluminado",
+        "De Olhos Bem Fechados",
+        "Noivo Neurótico, Noiva Nervosa"
+      ]
+    }, 
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual é a maior obra do diretor Quentin tarantino até agora?",
+      "description": "Dica: não é o que tem o maior título!",
+      "answer": 2,
+      "alternatives": [
+        "Django Livre",
+        "Cães de Aluguel",
+        "Pulp Fiction",
+        "Bastardos Inglórios",
+        "Kill Bill"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual desses grandes atores não é americano?",
+      "description": "Dica: ele é garoto propaganda da Gilete!",
+      "answer": 2,
+      "alternatives": [
+        "Leonardo DiCaprio",
+        "Ben Affleck",
+        "Tony Ramos",
+        "Robert Downey Jr.",
+        "Tom Cruise"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Entre os atores, quem tem o maior número de indicações ao Oscar?",
+      "description": "Dica: ele foi mais indicado que todos os outros!",
+      "answer": 1,
+      "alternatives": [
+        "Al Pacino",
+        "Jack Nicholson",
+        "Marlon Brando",
+        "Peter O'Toole",
+        "Robert De Niro"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Quantas vezes Charles Chaplin foi indicado ao Oscar de Melhor Ator?",
+      "description": "Dica: ele merecia ser indicado todos anos!",
+      "answer": 1,
+      "alternatives": [
+        "00",
+        "01",
+        "02",
+        "03",
+        "04"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Quem levou para casa 4 vezes o Oscar de Melhor Diretor?",
+      "description": "Dica: ele tem 4 Oscar's em casa!",
+      "answer": 2,
+      "alternatives": [
+        "Elia Kazan",
+        "Frank Capra",
+        "John Ford",
+        "Robert Benton",
+        "Steven Spielberg"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Quantas indicações Meryl Streep tem ao Oscar?",
+      "description": "Dica: ela tem mais indicações que dedos nas mãos!",
+      "answer": 1,
+      "alternatives": [
+        "17",
+        "21",
+        "18",
+        "20",
+        "19"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Quem foi o diretor do filme o Tubarão?",
+      "description": "Dica: apesar de sua excelente atuação não foi o tubarão!",
+      "answer": 2,
+      "alternatives": [
+        "Quentin Tarantino",
+        "Tim Burton",
+        "Steven Spielberg",
+        "Woody Allen",
+        "Francis Ford Coppola"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Quais desses filmes o diretor James Cameron não dirigiu?",
+      "description": "Dica: ele só não dirigiu porque estava sem habilitação!",
+      "answer": 4,
+      "alternatives": [
+        "True Lies",
+        "Aliens, O Resgate",
+        "Rambo: First Blood Part II",
+        "Avatar",
+        "Desaparecido em Combate"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Quantos premios no geral o filme Forrest Gump venceu?",
+      "description": "Dica: esse filme venceu até a Olimpíadas de Munique!",
+      "answer": 1,
+      "alternatives": [
+        "09",
+        "24",
+        "18",
+        "32",
+        "14"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Na saga Rocky quem foi o primeiro adversário com quem o lutador lutou?",
+      "description": "Dica: não foi o Jack Chan se fosse ele tava ferrado!",
+      "answer": 3,
+      "alternatives": [
+        "Clubber Lang",
+        "Apollo Creed",
+        "Ivan Drago",
+        "Spider Rico",
+        "Tommy Gunn"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual ator não interpretou o vilão Coringa no cinema?",
+      "description": "Dica: não foi o Jack Chan se fosse ele tava ferrado!",
+      "answer": 0,
+      "alternatives": [
+        "Michael Shannon",
+        "Mark Hamill",
+        "Heath Ledger",
+        "Jack Nicholson",
+        "Cesar Romero"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual o ano de lançamento do filme Cidade de Deus?",
+      "description": "Dica: foi em algum ano depois de Cristo!",
+      "answer": 2,
+      "alternatives": [
+        "2000",
+        "2013",
+        "2002",
+        "2005",
+        "2007"
+      ]
+    },
+    {
+      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
+      "title": "Qual o nome do ator que interpreta o querido João Grilo no filme O Auto da Compadecida?",
+      "description": "Dica: nem o Luciano Huck acerta essa!",
+      "answer": 3,
+      "alternatives": [
+        "Matheus Nastergale",
+        "Matheus Mastergale",
+        "Matheus Namastê",
+        "Matheus Nachtergaele",
+        "Matheus Narcegali"
       ]
     }
   ],
