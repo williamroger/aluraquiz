@@ -8,8 +8,10 @@ import QuizLogo from '../src/components/QuizLogo';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
+import Input from '../src/components/Input';
+import Button from '../src/components/Button';
 
-export const QuizContainer = styled.div`
+const QuizContainer = styled.div`
   width: 100%;
   max-width: 350px;
   padding-top: 45px;
@@ -34,18 +36,22 @@ export default function Home() {
             <h1>Cinema Quiz</h1>
           </Widget.Header>
           <Widget.Content>
+            <p>Teste todos os seus conhecimentos sobre Cinema.</p>
+
             <form onSubmit={(event) => {
               event.preventDefault();
               router.push(`/quiz?name=${name}`);
 
               console.log('fazendo o submit...');
             }}>
-              <input
-                onChange={(event) => {
-                  setName(event.target.value);
-                }} 
-                placeholder="Digite o seu nome para jogar ;)"/>
-              <button type="submit" disabled={name.length === 0}>Let`s go! {name}</button>
+              <Input 
+                name="nomeUsuario"
+                value={name}
+                placeholder="Diz aí seu nome pra jogar :)" 
+                onChange={(event) => setName(event.target.value) }
+              />
+          
+              <Button type="submit" disabled={name.length === 0}>Let's go {name}!</Button>
             </form>
           </Widget.Content>
         </Widget>
