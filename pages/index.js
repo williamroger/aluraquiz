@@ -38,12 +38,14 @@ export default function Home() {
           <Widget.Content>
             <p>Teste todos os seus conhecimentos sobre Cinema.</p>
 
-            <form onSubmit={(event) => {
-              event.preventDefault();
-              router.push(`/quiz?name=${name}`);
+            <form 
+              onSubmit={(event) => {
+                event.preventDefault();
+                router.push(`/quiz?name=${name}`);
 
-              console.log('fazendo o submit...');
-            }}>
+                console.log('fazendo o submit...');
+              }}
+            >
               <Input 
                 name="nomeUsuario"
                 value={name}
@@ -51,7 +53,9 @@ export default function Home() {
                 onChange={(event) => setName(event.target.value) }
               />
           
-              <Button type="submit" disabled={name.length === 0}>Let's go {name}!</Button>
+              <Button type="submit" disabled={name.length === 0}>
+                {`Let's go ${name}!`}
+              </Button>
             </form>
           </Widget.Content>
         </Widget>
