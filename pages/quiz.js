@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 
 import db from '../db.json';
 import QuizBackground from '../src/components/QuizBackground';
@@ -23,14 +24,20 @@ function LoadWidget() {
 }
 
 function ResultWidget({ results }) {
+  const router = useRouter();
+  const nameUser = router.query.name;
+  const rightAnswers = results.filter(result => result).length;
+  const mediaResult = rightAnswers >= (db.questions.length / 2 + 1);
+
   return (
     <Widget>
       <Widget.Header>
-        Tela de Resultado:
+        {mediaResult && <h1>{`Parabéns ${nameUser} você tem um excelente conhecimento sobre cinema!`}</h1>}
+        {!mediaResult && <h1>{`${nameUser}, você precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
       </Widget.Header>
       
       <Widget.Content>
-        <p>Você acertou {results.filter(result => result).length} questões!</p>
+        <p>Você acertou {rightAnswers} questões!</p>
         <ul>
           {results.map((result, index) => (
             <li key={index}>
