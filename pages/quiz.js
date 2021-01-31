@@ -5,9 +5,11 @@ import db from '../db.json';
 import QuizBackground from '../src/components/QuizBackground';
 import QuizContainer from '../src/components/QuizContainer';
 import QuizLogo from '../src/components/QuizLogo';
+import GitHubCorner from '../src/components/GitHubCorner';
 import Widget from '../src/components/Widget';
 import Button from '../src/components/Button';
 import AlternativesForm from '../src/components/AlternativesForm';
+import Footer from '../src/components/Footer';
 
 function LoadWidget() {
   return (
@@ -26,18 +28,19 @@ function LoadWidget() {
 function ResultWidget({ results }) {
   const router = useRouter();
   const nameUser = router.query.name;
+  const countQuestions = db.questions.length;
   const rightAnswers = results.filter(result => result).length;
-  const mediaResult = rightAnswers >= (db.questions.length / 2 + 1);
-
+  const mediaResult = rightAnswers >= (countQuestions / 2);
+  
   return (
     <Widget>
       <Widget.Header>
-        {mediaResult && <h1>{`Parabéns ${nameUser} você tem um excelente conhecimento sobre cinema!`}</h1>}
+        {mediaResult && <h1>{`Parabéns ${nameUser}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
         {!mediaResult && <h1>{`${nameUser}, você precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
       </Widget.Header>
       
       <Widget.Content>
-        <p>Você acertou {rightAnswers} questões!</p>
+        <p>Você acertou {rightAnswers} das {countQuestions} perguntas!</p>
         <ul>
           {results.map((result, index) => (
             <li key={index}>
@@ -71,7 +74,7 @@ function QuestionWidget({
       <img
         style={{
           width: '100%',
-          height: '150px',
+          height: '200px',
           objectFit: 'cover',
         }}
         src={question.image}
@@ -134,7 +137,7 @@ const screenStates = {
 }
 
 export default function QuizPage() {
-  const [screenState, setScreenState] = React.useState(screenStates.LOADING);
+  const [screenState, setScreenState] = React.useState(screenStates.RESULT);
   const [results, setResults] = React.useState([]);
   const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
@@ -150,7 +153,7 @@ export default function QuizPage() {
 
   React.useEffect(() => {
     setTimeout(() => {
-      setScreenState(screenStates.QUIZ);
+      // setScreenState(screenStates.QUIZ);
     }, 1 * 1000);
   }, []);
 
@@ -181,7 +184,11 @@ export default function QuizPage() {
         {screenState === screenStates.LOADING && <LoadWidget />}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
+  
+        {screenState === screenStates.RESULT && <Footer />}
       </QuizContainer>
+
+      <GitHubCorner projectUrl="https://github.com/williamroger/aluraquiz" />
     </QuizBackground>
   );
 }
