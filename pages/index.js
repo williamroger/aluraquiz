@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useRouter } from 'next/router';
 
 import db from '../db.json';
@@ -50,8 +49,23 @@ export default function Home() {
         </Widget>
 
         <Widget>
-          <Widget.Content>
+          <Widget.Header>
             <h1>Quizes da Galera</h1>
+          </Widget.Header>
+          <Widget.Content>
+            <ul>
+              {db.external.map((link) => {
+                const [projectName, githubUser] = link.replace(/\//g, '').replace('https:', '').replace('.vercel.app', '').split('.');
+                
+                return (
+                  <li key={link}>
+                    <Widget.Topic href={link}>
+                      {`${githubUser}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                )
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
 
