@@ -1,15 +1,15 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-import db from '../db.json';
-import QuizBackground from '../src/components/QuizBackground';
-import QuizContainer from '../src/components/QuizContainer';
-import QuizLogo from '../src/components/QuizLogo';
-import GitHubCorner from '../src/components/GitHubCorner';
-import Widget from '../src/components/Widget';
-import Button from '../src/components/Button';
-import AlternativesForm from '../src/components/AlternativesForm';
-import Footer from '../src/components/Footer';
+// import db from '../../../db.json';
+import QuizBackground from '../../components/QuizBackground';
+import QuizContainer from '../../components/QuizContainer';
+import QuizLogo from '../../components/QuizLogo';
+import GitHubCorner from '../../components/GitHubCorner';
+import Widget from '../../components/Widget';
+import Button from '../../components/Button';
+import AlternativesForm from '../../components/AlternativesForm';
+import Footer from '../../components/Footer';
 
 function LoadWidget() {
   return (
@@ -31,14 +31,14 @@ function ResultWidget({ results }) {
   const countQuestions = db.questions.length;
   const rightAnswers = results.filter(result => result).length;
   const mediaResult = rightAnswers >= (countQuestions / 2);
-  
+
   return (
     <Widget>
       <Widget.Header>
         {mediaResult && <h1>{`Parabéns ${nameUser}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
         {!mediaResult && <h1>{`${nameUser}, você precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
       </Widget.Header>
-      
+
       <Widget.Content>
         <p>Você acertou {rightAnswers} das {countQuestions} perguntas!</p>
         <ul>
@@ -54,8 +54,8 @@ function ResultWidget({ results }) {
 }
 
 function QuestionWidget({
-  question, 
-  totalQuestions, 
+  question,
+  totalQuestions,
   questionIndex,
   onSubmit,
   addResult,
@@ -83,7 +83,7 @@ function QuestionWidget({
       <Widget.Content>
         <h2>{question.title}</h2>
         <p>{question.description}</p>
-        <AlternativesForm 
+        <AlternativesForm
           onSubmit={(event) => {
             event.preventDefault();
             setIsQuestionSubmited(true);
@@ -101,16 +101,16 @@ function QuestionWidget({
             const isSelected = selectedAlternative === alternativeIndex;
             return (
               <Widget.Topic
-                key={alternativeID} 
-                as="label" 
+                key={alternativeID}
+                as="label"
                 htmlFor={alternativeID}
                 data-selected={isSelected}
                 data-status={isQuestionSubmited && alternativeStatus}
               >
-                <input 
-                  style={{display: 'none'}}
-                  type="radio" 
-                  name={questionID} 
+                <input
+                  style={{ display: 'none' }}
+                  type="radio"
+                  name={questionID}
                   id={alternativeID}
                   onChange={() => setSelectedAlternative(alternativeIndex)}
                 />
@@ -136,13 +136,14 @@ const screenStates = {
   RESULT: 'RESULT',
 }
 
-export default function QuizPage() {
-  const [screenState, setScreenState] = React.useState(screenStates.RESULT);
+export default function QuizScreen({ externalQuestions, bgExternal }) {
+  const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResults] = React.useState([]);
-  const totalQuestions = db.questions.length;
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
+  const question = externalQuestions[questionIndex];
+  const totalQuestions = externalQuestions.length;
+  const bg = bgExternal;
 
   function addResult(result) {
     setResults([
@@ -153,7 +154,7 @@ export default function QuizPage() {
 
   React.useEffect(() => {
     setTimeout(() => {
-      // setScreenState(screenStates.QUIZ);
+      setScreenState(screenStates.QUIZ);
     }, 1 * 1000);
   }, []);
 
@@ -167,10 +168,10 @@ export default function QuizPage() {
   }
 
   return (
-    <QuizBackground backgroundImage={db.bg}>
+    <QuizBackground backgroundImage={bg}>
       <QuizContainer>
         <QuizLogo />
-        
+
         {screenState === screenStates.QUIZ && (
           <QuestionWidget
             question={question}
@@ -180,11 +181,11 @@ export default function QuizPage() {
             addResult={addResult}
           />
         )}
-        
+
         {screenState === screenStates.LOADING && <LoadWidget />}
 
         {screenState === screenStates.RESULT && <ResultWidget results={results} />}
-  
+
         {screenState === screenStates.RESULT && <Footer />}
       </QuizContainer>
 
