@@ -1,7 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 
-// import db from '../../../db.json';
 import QuizBackground from '../../components/QuizBackground';
 import QuizContainer from '../../components/QuizContainer';
 import QuizLogo from '../../components/QuizLogo';
@@ -10,6 +9,7 @@ import Widget from '../../components/Widget';
 import Button from '../../components/Button';
 import AlternativesForm from '../../components/AlternativesForm';
 import Footer from '../../components/Footer';
+import BackLinkArrow from '../../components/BackLinkArrow';
 
 function LoadWidget() {
   return (
@@ -25,18 +25,18 @@ function LoadWidget() {
   );
 }
 
-function ResultWidget({ results }) {
+function ResultWidget({ results, totalQuestions }) {
   const router = useRouter();
   const nameUser = router.query.name;
-  const countQuestions = db.questions.length;
+  const countQuestions = totalQuestions;
   const rightAnswers = results.filter(result => result).length;
   const mediaResult = rightAnswers >= (countQuestions / 2);
 
   return (
     <Widget>
       <Widget.Header>
-        {mediaResult && <h1>{`Parabéns ${nameUser}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
-        {!mediaResult && <h1>{`${nameUser}, você precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
+        {mediaResult && <h1>{`Parabéns ${nameUser ? nameUser : ''}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
+        {!mediaResult && <h1>{`${nameUser ? nameUser : ''} ${nameUser ? ', você' : 'Você'} precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
       </Widget.Header>
 
       <Widget.Content>
@@ -69,6 +69,7 @@ function QuestionWidget({
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" title="Voltar para o ínicio"/>
         <h1>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h1>
       </Widget.Header>
       <img
@@ -184,7 +185,7 @@ export default function QuizScreen({ externalQuestions, bgExternal }) {
 
         {screenState === screenStates.LOADING && <LoadWidget />}
 
-        {screenState === screenStates.RESULT && <ResultWidget results={results} />}
+        {screenState === screenStates.RESULT && <ResultWidget results={results} totalQuestions={totalQuestions} />}
 
         {screenState === screenStates.RESULT && <Footer />}
       </QuizContainer>
