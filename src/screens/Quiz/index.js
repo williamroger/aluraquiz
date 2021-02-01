@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
 
 import QuizBackground from '../../components/QuizBackground';
 import QuizContainer from '../../components/QuizContainer';
@@ -33,7 +34,16 @@ function ResultWidget({ results, totalQuestions }) {
   const mediaResult = rightAnswers >= (countQuestions / 2);
 
   return (
-    <Widget>
+    <Widget
+      as={motion.section}
+      transition={{ delay: 0, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: '0' },
+        hidden: { opacity: 0, y: '100%' },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         {mediaResult && <h1>{`Parabéns ${nameUser ? nameUser : ''}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
         {!mediaResult && <h1>{`${nameUser ? nameUser : ''} ${nameUser ? ', você' : 'Você'} precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
@@ -67,7 +77,16 @@ function QuestionWidget({
   const hasAlternativeSelected = selectedAlternative !== undefined;
 
   return (
-    <Widget>
+    <Widget 
+      as={motion.section}
+      transition={{ delay: 0, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: '0' },
+        hidden: { opacity: 0, y: '100%' },
+      }}
+      initial="hidden"
+      animate="show"
+    >
       <Widget.Header>
         <BackLinkArrow href="/" title="Voltar para o ínicio"/>
         <h1>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h1>
