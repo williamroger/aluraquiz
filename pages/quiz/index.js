@@ -54,10 +54,19 @@ function ResultWidget({ results }) {
       animate="show"
     >
       <Widget.Header>
-        {mediaResult && <h1>{`Parabéns ${nameUser}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
-        {!mediaResult && <h1>{`${nameUser}, você precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
+        {mediaResult && <h1>{`Parabéns ${nameUser ? nameUser : ''}! Você tem um excelente conhecimento sobre cinema!`}</h1>}
+        {!mediaResult && <h1>{`${nameUser ? nameUser : ''} ${nameUser ? ', você' : 'Você'} precisa assistir mais filmes hein? Tá fraco demais ainda!`}</h1>}
       </Widget.Header>
       
+      <img
+        style={{
+          width: '100%',
+          height: '200px',
+          objectFit: 'cover',
+        }}
+        src={`https://media.giphy.com/media/${mediaResult ? 'g9582DNuQppxC' : 'LfFC2erYa5qN2'}/giphy.gif`}
+        alt="Imagem"
+      />
       <Widget.Content>
         <p>Você acertou {rightAnswers} das {countQuestions} perguntas!</p>
         <ul>
