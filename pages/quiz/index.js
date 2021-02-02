@@ -11,6 +11,7 @@ import Widget from '../../src/components/Widget';
 import Button from '../../src/components/Button';
 import AlternativesForm from '../../src/components/AlternativesForm';
 import Footer from '../../src/components/Footer';
+import BackLinkArrow from '../../src/components/BackLinkArrow';
 
 function LoadWidget() {
   return (
@@ -106,6 +107,7 @@ function QuestionWidget({
       animate="show"
     >
       <Widget.Header>
+        <BackLinkArrow href="/" title="Voltar para o ínicio" />
         <h1>{`Pergunta ${questionIndex + 1} de ${totalQuestions}`}</h1>
       </Widget.Header>
       <img
