@@ -45,14 +45,14 @@ export default function App({ Component, pageProps }) {
         <meta property="og:url" content="https://cinemaquiz.williamroger.vercel.app/" />
         <meta property="og:title" content="CinemaQuiz — Teste os seus conhecimentos sobre Cinema." />
         <meta property="og:description" content="Desenvolvimento de uma aplicação do tipo Quiz utilizando as tecnologias React, Styled Components e Next.js durante a Imersão React da Alura." />
-        <meta property="og:image" content="https://github.com/williamroger/aluraquiz/blob/main/src/assets/cinema-quiz.gif" />
+        <meta property="og:image" content="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://cinemaquiz.williamroger.vercel.app/" />
         <meta property="twitter:title" content="CinemaQuiz — Teste os seus conhecimentos sobre Cinema." />
         <meta property="twitter:description" content="Desenvolvimento de uma aplicação do tipo Quiz utilizando as tecnologias React, Styled Components e Next.js durante a Imersão React da Alura." />
-        <meta property="twitter:image" content="https://github.com/williamroger/aluraquiz/blob/main/src/assets/cinema-quiz.gif" />
+        <meta property="twitter:image" content="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mnx8bW92aWV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
