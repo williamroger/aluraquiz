@@ -4,8 +4,8 @@ Repositório criado para registrar o desenvolvimento de uma aplicação do tipo 
 de perguntas e repostas, desenvolvido durante a primeira Imersão React da Alura.
 
 Foram 5 dias de muito estudo que valeu muito a pena, durante esses dias trabalhamos 
-com as tecnologias [https://pt-br.reactjs.org/](React.js), [https://nextjs.org/](Next.js) e [https://styled-components.com/](StyledComponents), fazendo o deploy de maneira
-quase mágica pela [https://vercel.com/](Vercel).
+com as tecnologias [React.js](https://pt-br.reactjs.org/), [Next.js](https://nextjs.org/) e [Styled Components](https://styled-components.com/), fazendo o deploy de maneira
+quase mágica pela [Vercel](https://vercel.com/).
 
 Durante a imersão fomos orientados a escolher qualquer tema de nossa escolha para 
 popular o nosso banco de perguntas, por isso escolhi um tema que gosto muito, Cinema.
